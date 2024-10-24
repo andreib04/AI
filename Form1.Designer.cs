@@ -32,45 +32,68 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(14, 13);
+			this.pictureBox1.Location = new System.Drawing.Point(33, 22);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(759, 758);
+			this.pictureBox1.Size = new System.Drawing.Size(612, 829);
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
 			// pictureBox2
 			// 
-			this.pictureBox2.Location = new System.Drawing.Point(794, 13);
+			this.pictureBox2.Location = new System.Drawing.Point(682, 12);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(745, 758);
+			this.pictureBox2.Size = new System.Drawing.Size(582, 839);
 			this.pictureBox2.TabIndex = 1;
 			this.pictureBox2.TabStop = false;
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(584, 719);
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(382, 881);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(170, 22);
+			this.textBox1.Size = new System.Drawing.Size(263, 45);
 			this.textBox1.TabIndex = 2;
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(1368, 719);
+			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox2.Location = new System.Drawing.Point(1021, 881);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(140, 22);
+			this.textBox2.Size = new System.Drawing.Size(243, 45);
 			this.textBox2.TabIndex = 3;
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.Location = new System.Drawing.Point(1284, 12);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(582, 839);
+			this.pictureBox3.TabIndex = 4;
+			this.pictureBox3.TabStop = false;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox3.Location = new System.Drawing.Point(1613, 881);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(243, 45);
+			this.textBox3.TabIndex = 5;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1551, 839);
+			this.ClientSize = new System.Drawing.Size(1878, 973);
+			this.Controls.Add(this.textBox3);
+			this.Controls.Add(this.pictureBox3);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.pictureBox2);
@@ -80,6 +103,7 @@
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -91,6 +115,8 @@
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.TextBox textBox3;
 	}
 }
 

@@ -13,7 +13,7 @@ namespace Genetic
 		string name;
 
 		public static Random rnd = new Random();
-		public static int resX = 500, resY = 500;
+		public static int resX = 400, resY = 400;
 		
 		public Vertex(string name)
 		{
@@ -25,7 +25,7 @@ namespace Genetic
 		{
 			int size = 7;
 			graphics.DrawEllipse(Pens.Black, loc.X - size, loc.Y - size, 2 * size + 1, 2 * size + 1);
-			graphics.DrawString(name, new Font("Arial", 15, FontStyle.Bold), new SolidBrush(Color.Red),
+			graphics.DrawString(name, new Font("Arial", 25, FontStyle.Bold), new SolidBrush(Color.Red),
 				new PointF(loc.X - size / 2, loc.Y - size / 2));
 		}
 	}

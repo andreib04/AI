@@ -14,7 +14,8 @@ namespace Genetic
 	{
 		MyGraphics grp;
 		MyGraphics grp2;
-		Graph graph = new Graph(@"../../file.txt");
+		MyGraphics grp3;
+		
 		public Form1()
 		{
 			InitializeComponent();
@@ -22,25 +23,30 @@ namespace Genetic
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			AG.Innit();
+
 			grp = new MyGraphics(pictureBox1);
 			grp2 = new MyGraphics(pictureBox2);
-			
-			Solution sol1 = new Solution(graph);
-			Solution sol2 = new Solution(graph);
+			grp3 = new MyGraphics(pictureBox3);
 
-			sol1.Draw(grp.grp);
-			sol2.Draw(grp2.grp);
+			Population population = new Population();
 
-			//graph.Draw(grp.grp);
+			population.Sort();
+			population.Selection();
+			population.par[0].Draw(grp.grp);
+			population.par[29].Draw(grp2.grp);
 
-			//Graph T = graph.Clone();
-			//T.Draw(grp2.grp);
+			Solution test = population.Crossover(population.par[0], population.par[1]);
+			test.Mutate(200);
+			test.Draw(grp3.grp);
 
 			grp.Refresh();
 			grp2.Refresh();
+			grp3.Refresh();
 
-			textBox1.Text = sol1.funAdecv().ToString("0.000");
-			textBox2.Text = sol2.funAdecv().ToString("0.000");
+			textBox1.Text = population.par[0].funAdecv().ToString("0.000");
+			textBox2.Text = population.par[29].funAdecv().ToString("0.000");
+			textBox3.Text = test.funAdecv().ToString("0.000");
 		}
 	}
 }
