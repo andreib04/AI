@@ -37,7 +37,7 @@ namespace Genetic
 
 			foreach (Edge edge in graph.Edges)
 			{
-				toR += ((edge.absDist - edge.pond * k) * (edge.absDist - edge.pond * k));
+				toR += ((edge.absDist() - edge.pond * k) * (edge.absDist() - edge.pond * k));
 			}
 
 			return toR;

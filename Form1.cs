@@ -15,6 +15,8 @@ namespace Genetic
 		MyGraphics grp;
 		MyGraphics grp2;
 		MyGraphics grp3;
+		Population population;
+		int etapa;
 		
 		public Form1()
 		{
@@ -28,25 +30,38 @@ namespace Genetic
 			grp = new MyGraphics(pictureBox1);
 			grp2 = new MyGraphics(pictureBox2);
 			grp3 = new MyGraphics(pictureBox3);
+			etapa = 1000;
 
-			Population population = new Population();
+			population = new Population();
 
-			population.Sort();
-			population.Selection();
-			population.par[0].Draw(grp.grp);
-			population.par[29].Draw(grp2.grp);
-
-			Solution test = population.Crossover(population.par[0], population.par[1]);
-			test.Mutate(200);
-			test.Draw(grp3.grp);
+			
 
 			grp.Refresh();
 			grp2.Refresh();
 			grp3.Refresh();
+		}
 
-			textBox1.Text = population.par[0].funAdecv().ToString("0.000");
-			textBox2.Text = population.par[29].funAdecv().ToString("0.000");
-			textBox3.Text = test.funAdecv().ToString("0.000");
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			etapa--;
+			population.Do(etapa/3 + 1);
+
+			grp.Clear();
+
+			population.par[0].Draw(grp.grp);
+
+			grp.Refresh();
+			textBox1.Text = population.par[0].funAdecv().ToString();
+			textBox2.Text = etapa.ToString();
+			if(etapa == 20)
+			{
+				timer1.Stop();
+			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			timer1.Enabled = true;
 		}
 	}
 }

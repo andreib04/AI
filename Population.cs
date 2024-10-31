@@ -55,6 +55,35 @@ namespace Genetic
 			return toReturn;
 		}
 
+		public void Update(int etapa)
+		{
+			solutions.Clear();
+
+			for (int i = 0; i < N; i++)
+			{
+				int index1;
+				int index2;
+
+				do
+				{
+					index1 = rnd.Next(K);
+					index2 = rnd.Next(K);
+				} while (index1 == index2);
+
+				Solution chl = Crossover(par[index1], par[index2]);
+
+				chl.Mutate(etapa);
+				solutions.Add(chl);
+			}
+		}
+
+		public void Do(int etapa)
+		{
+			Sort();
+			Selection();
+			Update(etapa);
+		}
+
 		public void Sort()
 		{
 			solutions.Sort(delegate (Solution A, Solution B)

@@ -13,7 +13,7 @@ namespace Genetic
 		PictureBox display;
 		public Graphics grp;
 		Bitmap bmp;
-		Color backColor = Color.Blue;
+		Color backColor = Color.LightBlue;
 
 		public int resX { get { return display.Width; } }
 		public int resY { get { return display.Height; } }

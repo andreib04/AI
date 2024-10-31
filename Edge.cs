@@ -12,7 +12,11 @@ namespace Genetic
 		Vertex start, end;
 		public float pond;
 		public string info;
-		public float absDist;
+		public float absDist()
+		{
+			return (float)Math.Sqrt((start.loc.X - end.loc.X) * (start.loc.X - end.loc.X)
+										+ (start.loc.Y - end.loc.Y) * (start.loc.Y - end.loc.Y));
+		}
 
 		public Edge(string data, List<Vertex> vertices)
 		{
@@ -21,9 +25,6 @@ namespace Genetic
 			start = vertices[int.Parse(dataSplit[0])];
 			end = vertices[int.Parse(dataSplit[1])];
 			pond = float.Parse(dataSplit[2]);
-
-			absDist = (float)Math.Sqrt((start.loc.X - end.loc.X) * (start.loc.X - end.loc.X)
-										+	(start.loc.Y - end.loc.Y) * (start.loc.Y - end.loc.Y));
 		}
 
 		public void Draw(Graphics graphics)
